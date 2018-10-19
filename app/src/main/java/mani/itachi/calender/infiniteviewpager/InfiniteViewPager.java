@@ -73,8 +73,10 @@ public class InfiniteViewPager extends ViewPager {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
+        if(datesInMonth==null) return;
         int rows = datesInMonth.size() / 7;
 
         if (getChildCount() > 0 && rowHeight == 0) {
