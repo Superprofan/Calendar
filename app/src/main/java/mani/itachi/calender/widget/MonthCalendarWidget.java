@@ -125,7 +125,7 @@ public class MonthCalendarWidget extends AppWidgetProvider {
         String[] weekdays = dfs.getShortWeekdays();
         for (int _day = Calendar.SUNDAY; _day <= Calendar.SATURDAY; _day++) {
             RemoteViews dayRv = new RemoteViews(context.getPackageName(), R.layout.cell_header);
-            dayRv.setTextViewText(R.id.text1, weekdays[_day]);
+            dayRv.setTextViewText(android.R.id.text1, weekdays[_day]);
             headerRowRv.addView(R.id.row_container, dayRv);
         }
         rv.addView(R.id.calendar, headerRowRv);
@@ -135,17 +135,17 @@ public class MonthCalendarWidget extends AppWidgetProvider {
             for (int _day = 0; _day < 7; _day++) {
                 boolean inMonth = calendar.get(Calendar.MONTH) == month;
                 boolean inYear = calendar.get(Calendar.YEAR) == year;
-                boolean isToday = inYear && inMonth && (calendar.get(Calendar.DAY_OF_YEAR) == _day);
+                boolean isToday = inYear && inMonth && (calendar.get(Calendar.DAY_OF_YEAR) == day);
 
                 boolean isFirstOfMonth = calendar.get(Calendar.DAY_OF_MONTH) == 1;
                 int cellLayoutResId = R.layout.cell_day;
-//                if (isToday) {
-//                    cellLayoutResId = R.layout.cell_today;
-//                } else if (inMonth) {
-//                    cellLayoutResId = R.layout.cell_day_this_month;
-//                }
+                if (isToday) {
+                    cellLayoutResId = R.layout.cell_today;
+                } else if (inMonth) {
+                    cellLayoutResId = R.layout.cell_day_this_month;
+                }
                 RemoteViews cellRv = new RemoteViews(context.getPackageName(), cellLayoutResId);
-                cellRv.setTextViewText(R.id.text1,
+                cellRv.setTextViewText(android.R.id.text1,
                         Integer.toString(calendar.get(Calendar.DAY_OF_MONTH)));
                 if (isFirstOfMonth) {
                     cellRv.setTextViewText(R.id.month_label, DateFormat.format("MMM", calendar));

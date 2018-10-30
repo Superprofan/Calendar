@@ -16,7 +16,8 @@
             android:layout_width="56dp"
             android:layout_height="match_parent"
             android:contentDescription="@string/previous_month"
-            android:src="@drawable/left_arrow" />
+            android:src="@drawable/left_arrow"
+            android:tint="@color/colorPrimary"/>
 
         <Button
             android:id="@+id/month_label"
@@ -27,7 +28,7 @@
             android:fontFamily="sans-serif-condensed"
             android:gravity="center"
             android:textColor="#FFFFFF"
-            android:textSize="28sp" />
+            android:textSize="24sp" />
 
         <ImageButton
             android:id="@+id/next_month_button"
