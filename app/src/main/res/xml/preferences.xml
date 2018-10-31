@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.kizitonwose.colorpreferencecompat.ColorPreferenceCompat
+        android:defaultValue="@color/image_button_default_color"
+        android:key="image_button_color"
+        android:summary="@string/image_button_summary"
+        android:title="@string/image_button_title"
+        app:colorChoices="@array/color_choices"
+        app:colorShape="circle" />
+
+</PreferenceScreen>

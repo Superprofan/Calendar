@@ -9,5 +9,7 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="previous_month">Previous Month</string>
     <string name="next_month">Next Month</string>
+    <string name="image_button_summary">Set color for front/back buttons</string>
+    <string name="image_button_title">Button Colors</string>
 
 </resources>
